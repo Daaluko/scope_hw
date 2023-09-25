@@ -1,180 +1,180 @@
-// 2.
-// const murderer = 'Professor Plum';
+2.
+const murderer = 'Professor Plum';
 
-// const changeMurderer = function() {
-// murderer = 'Mrs. Peacock';
-// }
+const changeMurderer = function() {
+murderer = 'Mrs. Peacock';
+}
 
-// const declareMurderer = function() {
-// return `The murderer is ${murderer}.`;
-// }
+const declareMurderer = function() {
+return `The murderer is ${murderer}.`;
+}
 
-// changeMurderer();
-// const verdict = declareMurderer();
-// console.log(verdict);
+changeMurderer();
+const verdict = declareMurderer();
+console.log(verdict);
 
-// this will crash, there is an attempt to change the murderer variable, const declarations are not reassignable.
-
-
-// 3.
-// let murderer = 'Professor Plum';
-
-// const declareMurderer = function() {
-// let murderer = 'Mrs. Peacock';
-// return `The murderer is ${murderer}.`;
-// }
-
-// const firstVerdict = declareMurderer();
-// console.log('First Verdict: ', firstVerdict);
-
-// const secondVerdict = `The murderer is ${murderer}.`;
-// console.log('Second Verdict: ', secondVerdict);
-
-// the murderer is Mrs Peacock because even though the murderer variable was first assigned before the function began, it was reassigned inside the function and "let" declarations are reassignable.
+this will crash, there is an attempt to change the murderer variable, const declarations are not reassignable.
 
 
+3.
+let murderer = 'Professor Plum';
+
+const declareMurderer = function() {
+let murderer = 'Mrs. Peacock';
+return `The murderer is ${murderer}.`;
+}
+
+const firstVerdict = declareMurderer();
+console.log('First Verdict: ', firstVerdict);
+
+const secondVerdict = `The murderer is ${murderer}.`;
+console.log('Second Verdict: ', secondVerdict);
+
+the murderer is Mrs Peacock because even though the murderer variable was first assigned before the function began, it was reassigned inside the function and "let" declarations are reassignable.
 
 
-//
-
-// 4.
-// let suspectOne = 'Miss Scarlet';
-// let suspectTwo = 'Professor Plum';
-// let suspectThree = 'Mrs. Peacock';
-
-// const declareAllSuspects = function() {
-//   let suspectThree = 'Colonel Mustard';
-//   return `The suspects are ${suspectOne}, ${suspectTwo}, ${suspectThree}.`;
-// }
-
-// const suspects = declareAllSuspects();
-// console.log(suspects);
-// console.log(`Suspect three is ${suspectThree}.`);
-
-// suspect 3 is colonel mustard because the let declaration is reassigned in the function
-
-//5.
-// const scenario = {
-//     murderer: 'Miss Scarlet',
-//     room: 'Kitchen',
-//     weapon: 'Candle Stick'
-//   };
-
-//   const changeWeapon = function(newWeapon) {
-//     scenario.weapon = newWeapon;
-//   }
-
-//   const declareWeapon = function() {
-//     return `The weapon is the ${scenario.weapon}.`;
-//   }
-
-//   changeWeapon('Revolver');
-//   const verdict = declareWeapon();
-//   console.log(verdict);
-// the weapon used was a revolver, the weapon key's value is mutated on line 64
-
-//6.
-// let murderer = 'Colonel Mustard';
-
-// const changeMurderer = function() {
-//   murderer = 'Mr. Green';
-
-//   const plotTwist = function() {
-//     murderer = 'Mrs. White';
-//   }
-
-//   plotTwist();
-// }
-
-// const declareMurderer = function () {
-//   return `The murderer is ${murderer}.`;
-// }
-
-// changeMurderer();
-// const verdict = declareMurderer();
-// console.log(verdict);
-// the murderer is Mrs White because the plotTwist function was called first and therefore the value of the murderer variable murderer cannot be reassigned
 
 
-// 7. 
-// let murderer = 'Professor Plum';
-
-// const changeMurderer = function() {
-//   murderer = 'Mr. Green';
-
-//   const plotTwist = function() {
-//     let murderer = 'Colonel Mustard';
-
-//     const unexpectedOutcome = function() {
-//       murderer = 'Miss Scarlet';
-//     }
-
-//     unexpectedOutcome();
-//   }
-
-//   plotTwist();
-// }
-
-// const declareMurderer = function() {
-//   return `The murderer is ${murderer}.`;
-// }
-
-// changeMurderer();
-// const verdict = declareMurderer();
-// console.log(verdict);
-// Miss SCarlet is the murderer because the unexpectedOutcome function was called first and therefore its argument carries murderer variable's official value.
 
 
-//8.
-// const scenario = {
-//     murderer: 'Mrs. Peacock',
-//     room: 'Conservatory',
-//     weapon: 'Lead Pipe'
-//   };
+4.
+let suspectOne = 'Miss Scarlet';
+let suspectTwo = 'Professor Plum';
+let suspectThree = 'Mrs. Peacock';
 
-//   const changeScenario = function() {
-//     scenario.murderer = 'Mrs. Peacock';
-//     scenario.room = 'Dining Room';
+const declareAllSuspects = function() {
+  let suspectThree = 'Colonel Mustard';
+  return `The suspects are ${suspectOne}, ${suspectTwo}, ${suspectThree}.`;
+}
 
-//     const plotTwist = function(room) {
-//       if (scenario.room === room) {
-//         scenario.murderer = 'Colonel Mustard';
-//       }
+const suspects = declareAllSuspects();
+console.log(suspects);
+console.log(`Suspect three is ${suspectThree}.`);
 
-//       const unexpectedOutcome = function(murderer) {
-//         if (scenario.murderer === murderer) {
-//           scenario.weapon = 'Candle Stick';
-//         }
-//       }
+suspect 3 is colonel mustard because the let declaration is reassigned in the function
 
-//       unexpectedOutcome('Colonel Mustard');
-//     }
+5.
+const scenario = {
+    murderer: 'Miss Scarlet',
+    room: 'Kitchen',
+    weapon: 'Candle Stick'
+  };
 
-//     plotTwist('Dining Room');
-//   }
+  const changeWeapon = function(newWeapon) {
+    scenario.weapon = newWeapon;
+  }
 
-//   const declareWeapon = function() {
-//     return `The weapon is ${scenario.weapon}.`
-//   }
+  const declareWeapon = function() {
+    return `The weapon is the ${scenario.weapon}.`;
+  }
 
-//   changeScenario();
-//   const verdict = declareWeapon();
-//   console.log(verdict);
-// the weapon is a candlestick
+  changeWeapon('Revolver');
+  const verdict = declareWeapon();
+  console.log(verdict);
+the weapon used was a revolver, the weapon key's value is mutated on line 64
+
+6.
+let murderer = 'Colonel Mustard';
+
+const changeMurderer = function() {
+  murderer = 'Mr. Green';
+
+  const plotTwist = function() {
+    murderer = 'Mrs. White';
+  }
+
+  plotTwist();
+}
+
+const declareMurderer = function () {
+  return `The murderer is ${murderer}.`;
+}
+
+changeMurderer();
+const verdict = declareMurderer();
+console.log(verdict);
+the murderer is Mrs White because the plotTwist function was called first and therefore the value of the murderer variable murderer cannot be reassigned
 
 
-//9.
+7. 
+let murderer = 'Professor Plum';
 
-// let murderer = 'Professor Plum';
+const changeMurderer = function() {
+  murderer = 'Mr. Green';
 
-// if (murderer === 'Professor Plum') {
-//   let murderer = 'Mrs. Peacock';
-// }
+  const plotTwist = function() {
+    let murderer = 'Colonel Mustard';
 
-// const declareMurderer = function() {
-//   return `The murderer is ${murderer}.`;
-// }
+    const unexpectedOutcome = function() {
+      murderer = 'Miss Scarlet';
+    }
 
-// const verdict = declareMurderer();
-// console.log(verdict);
-// Mrs. Peacock is the murder because if murderer is equal to Professor Plum then the murderer is now changed to Mr Peacock(?) Since it is okay to reassign a let declaration
+    unexpectedOutcome();
+  }
+
+  plotTwist();
+}
+
+const declareMurderer = function() {
+  return `The murderer is ${murderer}.`;
+}
+
+changeMurderer();
+const verdict = declareMurderer();
+console.log(verdict);
+Miss SCarlet is the murderer because the unexpectedOutcome function was called first and therefore its argument carries murderer variable's official value.
+
+
+8.
+const scenario = {
+    murderer: 'Mrs. Peacock',
+    room: 'Conservatory',
+    weapon: 'Lead Pipe'
+  };
+
+  const changeScenario = function() {
+    scenario.murderer = 'Mrs. Peacock';
+    scenario.room = 'Dining Room';
+
+    const plotTwist = function(room) {
+      if (scenario.room === room) {
+        scenario.murderer = 'Colonel Mustard';
+      }
+
+      const unexpectedOutcome = function(murderer) {
+        if (scenario.murderer === murderer) {
+          scenario.weapon = 'Candle Stick';
+        }
+      }
+
+      unexpectedOutcome('Colonel Mustard');
+    }
+
+    plotTwist('Dining Room');
+  }
+
+  const declareWeapon = function() {
+    return `The weapon is ${scenario.weapon}.`
+  }
+
+  changeScenario();
+  const verdict = declareWeapon();
+  console.log(verdict);
+the weapon is a candlestick
+
+
+9.
+
+let murderer = 'Professor Plum';
+
+if (murderer === 'Professor Plum') {
+  let murderer = 'Mrs. Peacock';
+}
+
+const declareMurderer = function() {
+  return `The murderer is ${murderer}.`;
+}
+
+const verdict = declareMurderer();
+console.log(verdict);
+Mrs. Peacock is the murder because if murderer is equal to Professor Plum then the murderer is now changed to Mr Peacock(?) Since it is okay to reassign a let declaration
